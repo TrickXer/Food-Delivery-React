@@ -21,7 +21,7 @@ export function Cart({ setCart }) {
                         cart.length === 0 ? (
                             <Grid sx={{ mx: { xs: 3, xl: 15 } }} textAlign='center'>
                                 <img style={{ width: '100%' }} src={cartMT} alt='No Items Found' />
-                                <Typography sx={{ mt:  4, fontSize: { xs: 27, xl: 36 }, fontWeight: 600 }} color='#303360'>No Items Found</Typography>
+                                <Typography sx={{ mt:  4, fontSize: { xs: 27, xl: 36 }, fontWeight: 700 }} color='#303360'>No Items Found</Typography>
                             </Grid>
                         ) : (
                             <Grid container spacing={2} justifyContent='center'>

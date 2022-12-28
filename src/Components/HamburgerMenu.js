@@ -1,11 +1,12 @@
 import { Drawer, IconButton, List, ListItemButton, ListItemIcon, ListItemText } from '@mui/material'
 import React, { useState } from 'react'
 import MenuIcon from '@mui/icons-material/Menu';
+import { Link } from 'react-router-dom';
 
 export default function HamburgerMenu() {
     const [HamburgerMenu, setHamburgerMenu] = useState(false)
 
-    const TABS = ["Home", "About Us", "Contact", "Order Now", "Log In", "Sign Up"]
+    const TABS = [["Home", "/home"], ["About Us", "/about-us"], ["Contact", "/contact"], ["Order Now", "/"], ["Log In", "/log-in"], ["Sign Up", "/sign-up"]]
 
     return (
         <React.Fragment>
@@ -13,9 +14,9 @@ export default function HamburgerMenu() {
                 <List>
                     {
                         TABS.map((page, index) => (
-                            <ListItemButton key={index}>
+                            <ListItemButton component={ Link } to={page[1]} key={index}>
                                 <ListItemIcon>
-                                    <ListItemText sx={{ marginLeft: '65px' }}>{page}</ListItemText>
+                                    <ListItemText sx={{ marginLeft: '65px' }}>{page[0]}</ListItemText>
                                 </ListItemIcon>
                             </ListItemButton>
                         ))

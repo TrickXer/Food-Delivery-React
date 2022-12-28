@@ -25,7 +25,7 @@ export function Order({ setCart }) {
 
     return (
         <>
-            <Toolbar sx={{ marginRight: 3, marginTop: 15, display: 'flex', justifyContent: 'center', color: 'white' }}>
+            <Toolbar sx={{ marginRight: { xs: 1.6, xl: 2.4 }, marginTop: 15, display: 'flex', justifyContent: 'center', color: 'white' }}>
                 <Tabs
                     textColor='inherit' 
                     value={value} 
@@ -34,7 +34,7 @@ export function Order({ setCart }) {
                 >
                     {
                         hashes.map((tab, index) => (
-                            <Tab style={ getStyle(value === index) } sx={{ marginLeft: { xs: 1.8, xl: 3 }, fontWeight: 800, borderRadius: 25 }} key={index} label={tab} />
+                            <Tab style={ getStyle(value === index) } sx={{ marginLeft: { xs: 1, xl: 3 }, fontWeight: 800, borderRadius: 25 }} key={index} label={tab} />
                         ))
                     }
                 </Tabs>

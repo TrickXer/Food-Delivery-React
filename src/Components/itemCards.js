@@ -11,9 +11,6 @@ export function ItemCards({ item, setCart }) {
     let [count, setCount] = useState(item.quantity ? item.quantity : 0)
 
     localStorage.setItem('CART_DETAILS', JSON.stringify(cart))
-    // localStorage.setItem('NOTIFY_COUNT', localStorage.getItem('NOTIFY_COUNT'))
-
-    // let prevNot = JSON.parse(localStorage.getItem('CART_DETAILS')).length
 
     const update = () => {
         for (const key in cart) {

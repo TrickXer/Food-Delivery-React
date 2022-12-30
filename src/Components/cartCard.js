@@ -49,9 +49,6 @@ export function CartCard({ item, setCart }) {
                             <CardHeader 
                                 titleTypographyProps = {{ fontSize: { xs: 17, xl: 21 }, fontWeight: 545 }}
                                 title = {item.title}
-    
-                                // subheaderTypographyProps = {{ fontSize: { xs: 12, xl: 15 }, color: 'darkgrey' }}
-                                // subheader = {item.category}
                             />
                         </Box>
                         

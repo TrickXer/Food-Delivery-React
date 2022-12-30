@@ -1,6 +1,6 @@
 import { Tab, Tabs, Toolbar, Grid, Box } from '@mui/material'
 import React, { useState } from 'react'
-import { Filter } from './orderPages/filter';
+import { Filter } from '../functions/filter';
 
 
 export function Order({ setCart }) {

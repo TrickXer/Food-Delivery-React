@@ -12,9 +12,20 @@ export function Cart({ setCart }) {
 
     return (
         <>
-            <Grid sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '0px 30px',  marginLeft: '50%', transform: 'translate(-50%, 351%)', width: { xs: '85vw', sm: '64vw', md: '41vw', lg: '31vw', xl: '28vw' }, height: '5vh', overflow: 'hidden', background: 'white' }}>
-                <Button sx={{ marginLeft: '86%', padding: '0px 10px' }} onClick={ () => updateCart([], setCart) }>clear</Button>
-            </Grid>
+            {
+                localStorage.getItem('TOTAL_PRICE') > 0 ? (
+    
+                    <Grid sx={{ display: 'flex', justifyContent: 'space-around', alignItems: 'center', padding: '0px 4vw',  marginLeft: '50%', transform: 'translate(-50%, 351%)', width: { xs: '85vw', sm: '64vw', md: '41vw', lg: '31vw', xl: '28vw' }, height: '5vh', overflow: 'hidden', background: 'white' }}>
+                        <Typography fontWeight={600}>Total:&nbsp;&#8377;&nbsp;{ localStorage.getItem('TOTAL_PRICE') }</Typography>
+                        <Button sx={{ marginLeft: '86%', padding: '0px 10px' }} onClick={ () => updateCart([], setCart) }>clear</Button>
+                    </Grid>
+                ) : (
+                    <Grid sx={{ display: 'flex', justifyContent: 'space-around', alignItems: 'center', padding: '0px 17.5px',  marginLeft: '50%', transform: 'translate(-50%, 351%)', width: { xs: '85vw', sm: '64vw', md: '41vw', lg: '31vw', xl: '28vw' }, height: '5vh', overflow: 'hidden', background: 'white' }}>
+                        <Button sx={{ marginLeft: '86%', padding: '0px 10px' }} onClick={ () => updateCart([], setCart) }>clear</Button>
+                    </Grid>
+                )
+            }
+
 
             <Grid sx={{ padding: '10px 10px', marginTop: '16vh', marginLeft: '50%', transform: 'translate(-50%, 3%)', scrollBehavior: 'smooth', width: { xs: '85vw', sm: '64vw', md: '41vw', lg: '31vw', xl: '28vw' }, height: '53vh', overflow: 'auto', background: 'rgba(255,255,255,0.55)' }}>
                     {

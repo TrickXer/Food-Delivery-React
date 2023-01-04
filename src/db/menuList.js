@@ -3,7 +3,7 @@ export const items = [
         id: 1,
         title: 'Idli',
         rating: '',
-        price: '10.00',
+        price: '20.00',
         category: 'Breakfast, Dinner'
     },
     {

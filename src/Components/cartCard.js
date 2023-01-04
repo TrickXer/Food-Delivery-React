@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import DeleteForeverOutlinedIcon from '@mui/icons-material/DeleteForeverOutlined';
 import { Box, Button, Card, CardActions, CardHeader, useTheme, CardMedia, Typography, useMediaQuery } from '@mui/material'
-import { cart } from '../App'
+import { cart, price } from '../App'
 import image from '../images/background.jpg'
 
 export function CartCard({ item, setCart }) {
@@ -26,6 +26,7 @@ export function CartCard({ item, setCart }) {
         }
         
         localStorage.setItem('CART_DETAILS', JSON.stringify(cart))
+        localStorage.setItem('TOTAL_PRICE', price(cart));
         setCart(JSON.parse(localStorage.getItem('CART_DETAILS')))
     }
     

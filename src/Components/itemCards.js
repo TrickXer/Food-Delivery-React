@@ -3,7 +3,7 @@ import { Button, Card, CardActions, CardHeader, CardMedia, Typography } from '@m
 import { useState } from 'react'
 import React from 'react'
 import { Box } from '@mui/system'
-import { cart } from '../App'
+import { cart, price } from '../App'
 import image from '../images/background.jpg'
 
 
@@ -11,6 +11,7 @@ export function ItemCards({ item, setCart }) {
     let [count, setCount] = useState(item.quantity ? item.quantity : 0)
 
     localStorage.setItem('CART_DETAILS', JSON.stringify(cart))
+    localStorage.setItem('TOTAL_PRICE', price(cart));
 
     const update = () => {
         for (const key in cart) {
@@ -22,6 +23,7 @@ export function ItemCards({ item, setCart }) {
         }
 
         localStorage.setItem('CART_DETAILS', JSON.stringify(cart))
+        localStorage.setItem('TOTAL_PRICE', price(cart));
         setCart(JSON.parse(localStorage.getItem('CART_DETAILS')))
     }
 
@@ -30,6 +32,7 @@ export function ItemCards({ item, setCart }) {
         cart.push({...item, quantity: count})
 
         localStorage.setItem('CART_DETAILS', JSON.stringify(cart))
+        localStorage.setItem('TOTAL_PRICE', price(cart));
         setCart(JSON.parse(localStorage.getItem('CART_DETAILS')))
     }
     

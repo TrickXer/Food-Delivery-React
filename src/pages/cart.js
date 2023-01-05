@@ -56,7 +56,7 @@ export function Cart({ setCart }) {
                     continue adding
                 </Button>
 
-                <Button to='/billPay' component={ Link } sx={{ "&:hover, &.active": { backgroundColor: 'orange', boxShadow: '0 3px 10px -3px orange' }, alignItems: 'center', padding:{ xs: '0.88px 15px', xl: '6px 15px' }, backgroundColor: 'orange', borderRadius: 25, color: 'white' }}>
+                <Button to='/payment' component={ Link } sx={{ "&:hover, &.active": { backgroundColor: 'orange', boxShadow: '0 3px 10px -3px orange' }, alignItems: 'center', padding:{ xs: '0.88px 15px', xl: '6px 15px' }, backgroundColor: 'orange', borderRadius: 25, color: 'white' }}>
                     <Typography sx={{ fontSize: { xs: 11, xl: 14 }, fontWeight:{ xs: 600, xl: 700 } }}>place order</Typography>
                     <Typography fontSize={25}>&nbsp;&#10230;</Typography>
                 </Button>

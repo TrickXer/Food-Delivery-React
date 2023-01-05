@@ -5,6 +5,7 @@ import { NavLink } from 'react-router-dom'
 import { CartCard } from '../Components/cartCard'
 import cartMT from '../images/cartMT.png'
 import { cart, updateCart } from '../App'
+import { Link } from 'react-router-dom'
 
 
 export function Cart({ setCart }) {
@@ -51,16 +52,14 @@ export function Cart({ setCart }) {
             </Grid>
 
             <Grid sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: { xs: '0px 3vw', xl: '0px 1.5vw' },  marginLeft: '50%', transform: 'translate(-50%, 0%)', scrollBehavior: 'smooth', width: { xs: '85vw', sm: '64vw', md: '41vw', lg: '31vw', xl: '28vw' }, height: '12vh', overflow: 'auto', background: 'white' }}>
-                <Button to='/' component={NavLink} sx={{ fontSize: { xs: 11, xl: 14 }, fontWeight:{ xs: 600, xl: 700 }, "&:hover, &.active": { backgroundColor: 'orange', boxShadow: '0 3px 10px -3px orange' }, padding: { xs: '10px 15px', xl: '12.5px 15px' }, backgroundColor: 'orange', borderRadius: 25, color: 'white' }}>
+                <Button to='/order-now' component={NavLink} sx={{ fontSize: { xs: 11, xl: 14 }, fontWeight:{ xs: 600, xl: 700 }, "&:hover, &.active": { backgroundColor: 'orange', boxShadow: '0 3px 10px -3px orange' }, padding: { xs: '10px 15px', xl: '12.5px 15px' }, backgroundColor: 'orange', borderRadius: 25, color: 'white' }}>
                     continue adding
                 </Button>
 
-                <a href='' style={{ textDecoration: 'none' }}>
-                    <Button sx={{ "&:hover, &.active": { backgroundColor: 'orange', boxShadow: '0 3px 10px -3px orange' }, alignItems: 'center', padding:{ xs: '0.88px 15px', xl: '6px 15px' }, backgroundColor: 'orange', borderRadius: 25, color: 'white' }}>
-                        <Typography sx={{ fontSize: { xs: 11, xl: 14 }, fontWeight:{ xs: 600, xl: 700 } }}>place order</Typography>
-                        <Typography fontSize={25}>&nbsp;&#10230;</Typography>
-                    </Button>
-                </a>
+                <Button to='/billPay' component={ Link } sx={{ "&:hover, &.active": { backgroundColor: 'orange', boxShadow: '0 3px 10px -3px orange' }, alignItems: 'center', padding:{ xs: '0.88px 15px', xl: '6px 15px' }, backgroundColor: 'orange', borderRadius: 25, color: 'white' }}>
+                    <Typography sx={{ fontSize: { xs: 11, xl: 14 }, fontWeight:{ xs: 600, xl: 700 } }}>place order</Typography>
+                    <Typography fontSize={25}>&nbsp;&#10230;</Typography>
+                </Button>
             </Grid>
         </>
     )

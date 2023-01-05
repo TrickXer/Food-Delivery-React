@@ -1,36 +1,15 @@
 /* eslint-disable react-hooks/exhaustive-deps */
+// import LocalDiningOutlinedIcon from '@mui/icons-material/LocalDiningOutlined';
 import { AppBar, Toolbar, Typography, useTheme, useMediaQuery, Button, Box } from '@mui/material'
 import React from 'react'
-import LocalDiningOutlinedIcon from '@mui/icons-material/LocalDiningOutlined';
 import ShoppingCartCheckoutSharpIcon from '@mui/icons-material/ShoppingCartCheckoutSharp';
 import HamburgerMenu from './HamburgerMenu';
-import { NavLink } from 'react-router-dom';
-// import { HashLink } from 'react-router-hash-link';
+import { Link } from 'react-router-dom';
 
 export function NavBar({ notifyCount }) {
     // const [value, setvalue] = useState(0);
     const theme = useTheme();
     const matches = useMediaQuery(theme.breakpoints.down('md'));
-
-    // console.log(notifyCount)
-
-    // const [state, setstate] = useState(true)
-    
-    // useEffect(() => {
-    //     document.addEventListener('storage', () => {
-    //         notify = localStorage.getItem('NOTIFY_COUNT')
-    //         setNotify(notify)
-    //     })
-
-    //     // console.log(window.localStorage.getItem('NOTIFY_COUNT'))
-
-    //     return () => document.removeEventListener('storage', () => {
-    //         notify = localStorage.getItem('NOTIFY_COUNT')
-    //         setNotify(notify)
-    //     })
-    // }, [])
-
-    // const reset = () => props.count = 0
 
     // const tabStyle = {
     //     default_tab:{
@@ -51,13 +30,14 @@ export function NavBar({ notifyCount }) {
 
     return (
         <React.Fragment>
-            <AppBar elevation={0} sx={{ backgroundColor: 'transparent', marginTop: 3 }}>
+            <AppBar elevation={0} sx={{ zIndex: -1, backgroundColor: 'transparent', marginTop: 3 }}>
                 <Toolbar>
                     <>
                         { matches && <HamburgerMenu /> }
 
-                        <LocalDiningOutlinedIcon sx={{ marginLeft: '20px' }}  fontSize='large' />
-                        <Typography sx={{ marginLeft: '5px' }} fontSize='40px'>Food</Typography>
+                        {/* <Link to='/' style={{ color: 'white', textDecoration: 'none' }}>
+                            <Typography sx={{ marginLeft: '3vw', "&:hover": { color: 'orange' } }} fontSize='21px'>&#8426;&ensp;&nbsp;back</Typography>
+                        </Link> */}
 
                         {/* <Tabs
                             sx={{ marginLeft: '30px' }} 
@@ -74,7 +54,7 @@ export function NavBar({ notifyCount }) {
                             <Tab style={ getStyle(value === 3) } to='/order-now' component={HashLink} label='order now' />
                         </Tabs> */}
     
-                        <Button to='/cart' component={NavLink} sx={{ "&:hover, &.active": { boxShadow: '0 3px 10px -3px lightblue', backgroundColor: 'white', color: '#4CED3E' }, background: '#4CED3E', color: 'white', fontWeight: 700, marginLeft: 'auto' }} >
+                        <Button to='/cart' component={Link} sx={{ zIndex: 1, "&:hover, &.active": { boxShadow: '0 3px 10px -3px lightblue', backgroundColor: 'white', color: '#4CED3E' }, background: '#4CED3E', color: 'white', fontWeight: 700, marginLeft: 'auto' }} >
                             {
                                 (notifyCount > 0) &&
                                     <Box>

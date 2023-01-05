@@ -24,7 +24,7 @@ export function Order({ setCart }) {
     }
 
     return (
-        <>
+        <Box>
             <Toolbar sx={{ marginRight: { xs: 1.6, xl: 2.4 }, marginTop: 15, display: 'flex', justifyContent: 'center', color: 'white' }}>
                 <Tabs
                     textColor='inherit' 
@@ -45,6 +45,6 @@ export function Order({ setCart }) {
                     <Filter setCart={ setCart } category={ hashes[value] } />
                 </Box>
             </Grid>
-        </>
+        </Box>
     )
 }

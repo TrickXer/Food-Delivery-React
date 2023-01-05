@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 export default function HamburgerMenu() {
     const [HamburgerMenu, setHamburgerMenu] = useState(false)
 
-    const TABS = [["Home", "/home"], ["About Us", "/about-us"], ["Contact", "/contact"], ["Order Now", "/"], ["Log In", "/log-in"], ["Sign Up", "/sign-up"]]
+    const TABS = [["Home", "/"], ["About Us", "/about-us"], ["Contact", "/contact"], ["Order Now", "/order-now"], ["Log In", "/log-in"], ["Sign Up", "/sign-up"]]
 
     return (
         <React.Fragment>
